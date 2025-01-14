@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "914983803426",
+    "firebase_url": "https://nutritrack-c987d-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nutritrack-c987d",
+    "storage_bucket": "nutritrack-c987d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914983803426:android:d411a7664208bc5ed6887b",
+        "android_client_info": {
+          "package_name": "com.example.nutritionapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1sOQ7X-YF1xH28ldx77GIKXOwI5x3hyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

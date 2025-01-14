@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.DisplayFood">
+
+    <LinearLayout
+        android:id="@+id/no_food_found_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_margin="40dp"
+            android:alpha="0.24"
+            android:src="@drawable/img_no_food_found" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:alpha="0.54"
+            android:gravity="center"
+            android:text="@string/search_no_food_found" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TodayLofgsHeadding"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Food Logs"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:translationY="-0.52sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp" />
+
+    <LinearLayout
+        android:id="@+id/no_food_logs_found_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_margin="40dp"
+            android:alpha="0.24"
+            android:src="@drawable/img_no_food_found" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
+            android:alpha="0.54"
+            android:gravity="center"
+            android:text="@string/no_food_logs_found" />
+
+        <Button
+            android:id="@+id/start_tracking_meal_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/primaryColor"
+            android:text="@string/dashboard_start_tracking" />
+    </LinearLayout>
+</RelativeLayout>

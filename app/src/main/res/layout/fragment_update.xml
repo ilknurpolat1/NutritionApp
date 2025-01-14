@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ui.update.UpdateFragment">
+
+        <RelativeLayout
+            android:id="@+id/centerhorizontalline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+        <RelativeLayout
+            android:id="@+id/centerverticalline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/NameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2dp"
+            android:layout_marginTop="05dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_update_maleLogo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/heightLayout"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toStartOf="@id/centerverticalline"
+        android:background="@drawable/registermalefemalenotfocus">
+
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:layout_above="@+id/textmale"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/maleicon">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textmale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:text="Male"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold">
+
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_update_femaleLogo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/heightLayout"
+        android:layout_marginStart="58dp"
+        android:layout_marginBottom="21dp"
+        android:layout_toEndOf="@id/centerverticalline"
+        android:background="@drawable/registermalefemalenotfocus">
+
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:layout_above="@+id/textfemale"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/femaleicon">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textfemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:text="Female"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold">
+
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weightLayout"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/heightLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="58dp"
+        android:layout_toStartOf="@id/centerverticalline"
+        android:background="@drawable/registermalefemalenotfocus">
+
+        <TextView
+            android:id="@+id/textWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Weight"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/fragment_update_currentWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_update_currentWeight"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/fragment_update_decrementWeight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/plusminus"
+                android:src="@drawable/minus">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/fragment_update_currentWeight"
+>
+
+            <ImageView
+                android:id="@+id/fragment_update_incrementWeight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/plusminus"
+                android:src="@drawable/add">
+
+            </ImageView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ageLayout"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/heightLayout"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@id/centerverticalline"
+        android:background="@drawable/registermalefemalenotfocus">
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Age"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/fragment_update_currentAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/fragment_update_currentAge"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/fragment_update_decrementAge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/plusminus"
+                android:src="@drawable/minus">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/fragment_update_currentAge"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:id="@+id/fragment_update_incrementAge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/plusminus"
+                android:src="@drawable/add">
+
+            </ImageView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/heightLayout"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_above="@id/centerhorizontalline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="-37dp"
+        android:background="@drawable/registermalefemalenotfocus">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="Height"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fragment_update_currentHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="54dp"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/fragment_update_currentHeight"
+            android:text="cm"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <SeekBar
+            android:id="@+id/fragment_update_heightBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:progressTint="@color/black" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/fragment_update_UpdateBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/fragment_update_spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/registermalefemalenotfocus">
+
+        </Spinner>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragment_update_UpdateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/primaryColor"
+        android:text="Update"
+        android:textSize="15sp">
+
+    </Button>
+</RelativeLayout>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_today_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="3dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/primaryColor">
+
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="19dp"
+            android:lineSpacingExtra="1sp"
+            android:text="@string/Today"
+            android:textAppearance="@style/today"
+            android:textSize="20sp"
+            android:translationY="-0.52sp" />
+        <TextView
+            android:id="@+id/today_insights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="50dp"
+            android:lineSpacingExtra="1sp"
+            android:text="@string/today_insights"
+            android:textAppearance="@style/today"
+            android:textSize="15sp"
+            android:translationY="-0.52sp"
+            android:clickable="true"
+            android:focusable="true" />
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:max="100"
+                tools:progress="0" />
+
+            <TextView
+                android:id="@+id/total_calories"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:lineSpacingExtra="1sp"
+                android:text=""
+                android:textAppearance="@style/today"
+                android:textSize="15sp"
+                android:translationY="-0.52sp" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--            This is breakfast-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/base_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/base_breakfast"
+                    tools:layout_editor_absoluteX="-55dp">
+
+                    <!--                    This is the fixed one-->
+                    <RelativeLayout
+                        android:id="@+id/fixed_breakfast"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout android:id="@+id/home_breakfast_text_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <TextView
+                                android:id="@+id/home_breakfast"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="61dp"
+                                android:lineSpacingExtra="1sp"
+                                android:text="@string/home_breakfast"
+                                android:textAppearance="@style/today"
+                                android:textSize="20sp"
+                                android:translationY="-0.52sp" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/home_breakfast_add_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="end">
+
+                            <ImageButton
+                                android:id="@+id/home_breakfast_add"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/ic_plus_icon" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/home_breakfast_image_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <ImageView
+                                android:id="@+id/home_breakfast_image"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/breakfast" />
+                        </RelativeLayout>
+                        <TextView
+                            android:id="@+id/home_breakfast_calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="62dp"
+                            android:layout_marginTop="65dp"
+                            android:lineSpacingExtra="1sp"
+                            android:text=""
+                            android:textAppearance="@style/today"
+                            android:textSize="20sp"
+                            android:translationY="-0.52sp" />
+
+                    </RelativeLayout>
+
+                    <!--                    This is display one which is hidden-->
+                    <LinearLayout
+                        android:id="@+id/hidden_breakfast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_breakfast">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!--            This is lunch-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/base_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/base_breakfast"
+                    tools:layout_editor_absoluteX="-55dp">
+
+                    <!--                    This is the fixed one-->
+                    <RelativeLayout
+                        android:id="@+id/fixed_lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout android:id="@+id/home_lunch_text_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+                            <TextView
+                                android:id="@+id/home_lunch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="61dp"
+                                android:lineSpacingExtra="1sp"
+                                android:text="@string/home_lunch"
+                                android:textAppearance="@style/today"
+                                android:textSize="20sp"
+                                android:translationY="-0.52sp" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/home_lunch_add_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="end">
+
+                            <ImageButton
+                                android:id="@+id/home_lunch_add"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/ic_plus_icon" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/home_lunch_image_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <ImageView
+                                android:id="@+id/home_lunch_image"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/lunch" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/home_lunch_calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="62dp"
+                            android:layout_marginTop="65dp"
+                            android:lineSpacingExtra="1sp"
+                            android:text=""
+                            android:textAppearance="@style/today"
+                            android:textSize="20sp"
+                            android:translationY="-0.52sp" />
+
+                    </RelativeLayout>
+
+                    <!--This is display one which is hidden-->
+                    <LinearLayout
+                        android:id="@+id/hidden_lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_lunch"
+                        android:visibility="gone">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_lunch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!--            This is Snacks-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/base_snacks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/base_breakfast"
+                    tools:layout_editor_absoluteX="-55dp">
+
+                    <!--                    This is the fixed one-->
+                    <RelativeLayout
+                        android:id="@+id/fixed_snacks"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout android:id="@+id/home_snacks_text_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+                            <TextView
+                                android:id="@+id/home_snacks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="61dp"
+                                android:lineSpacingExtra="1sp"
+                                android:text="@string/home_snacks"
+                                android:textAppearance="@style/today"
+                                android:textSize="20sp"
+                                android:translationY="-0.52sp" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/home_snacks_add_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="end">
+
+                            <ImageButton
+                                android:id="@+id/home_snacks_add"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/ic_plus_icon" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/home_snacks_image_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <ImageView
+                                android:id="@+id/home_snacks_image"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/snacks" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/home_snacks_calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="62dp"
+                            android:layout_marginTop="65dp"
+                            android:lineSpacingExtra="1sp"
+                            android:text=""
+                            android:textAppearance="@style/today"
+                            android:textSize="20sp"
+                            android:translationY="-0.52sp" />
+
+                    </RelativeLayout>
+
+                    <!--This is display one which is hidden-->
+                    <LinearLayout
+                        android:id="@+id/hidden_snacks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_snacks"
+                        android:visibility="gone">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_snacks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!--            This is dinner-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/base_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="5dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/base_breakfast"
+                    tools:layout_editor_absoluteX="-55dp">
+
+                    <!--                    This is the fixed one-->
+                    <RelativeLayout
+                        android:id="@+id/fixed_dinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout android:id="@+id/home_dinner_text_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <TextView
+                                android:id="@+id/home_dinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="61dp"
+                                android:lineSpacingExtra="1sp"
+                                android:text="@string/home_dinner"
+                                android:textAppearance="@style/today"
+                                android:textSize="20sp"
+                                android:translationY="-0.52sp" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/home_dinner_add_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="end">
+
+                            <ImageButton
+                                android:id="@+id/home_dinner_add"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/ic_plus_icon" />
+
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@+id/home_dinner_image_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+                            <ImageView
+                                android:id="@+id/home_dinner_image"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/dinner" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/home_dinner_calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="62dp"
+                            android:layout_marginTop="65dp"
+                            android:lineSpacingExtra="1sp"
+                            android:text=""
+                            android:textAppearance="@style/today"
+                            android:textSize="20sp"
+                            android:translationY="-0.52sp" />
+
+                    </RelativeLayout>
+
+                    <!--This is display one which is hidden-->
+                    <LinearLayout
+                        android:id="@+id/hidden_dinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed_dinner"
+                        android:visibility="gone">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
